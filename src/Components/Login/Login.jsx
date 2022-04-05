@@ -1,48 +1,69 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import "../../App.css";
 
 function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = () => {
+    let data = {
+      username: username,
+      password: password,
+    };
+    axios
+      .post("https://demo-heroku--12.herokuapp.com/api/v1/login", data)
+      .then((res) => {
+        console.log("res", res);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  };
   return (
     <div>
-      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
-        <div class="mb-4">
+      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+        <div className="mb-4">
           <label
-            class="block text-grey-darker text-sm font-bold mb-2"
+            className="block text-grey-darker text-sm font-bold mb-2"
             for="username"
           >
             Username
           </label>
           <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+            onChange={(e) => setUsername(e.target.value)}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
             id="username"
             type="text"
             placeholder="Username"
           />
         </div>
-        <div class="mb-6">
+        <div className="mb-6">
           <label
-            class="block text-grey-darker text-sm font-bold mb-2"
+            className="block text-grey-darker text-sm font-bold mb-2"
             for="password"
           >
             Password
           </label>
           <input
-            class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+            onChange={(e) => setPassword(e.target.value)}
+            className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
             id="password"
             type="password"
             placeholder="******************"
           />
-          <p class="text-red text-xs italic">Please choose a password.</p>
+          <p className="text-red text-xs italic">Please choose a password.</p>
         </div>
-        <div class="flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <button
-            class="bg-blue-300 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            onClick={() => handleSubmit()}
+            className="bg-blue-300 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
             type="button"
           >
             Sign In
           </button>
           <a
-            class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
+            className="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
             href="#"
           >
             Forgot Password?
