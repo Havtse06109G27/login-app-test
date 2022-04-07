@@ -35,7 +35,7 @@ function Register() {
         <div className="mb-4">
           <label
             className="block text-grey-darker text-sm font-bold mb-2"
-            for="username"
+            htmlFor="username"
           >
             Username
           </label>
@@ -50,7 +50,7 @@ function Register() {
         <div className="mb-4">
           <label
             className="block text-grey-darker text-sm font-bold mb-2"
-            for="fullname"
+            htmlFor="fullname"
           >
             Fullname
           </label>
@@ -65,7 +65,7 @@ function Register() {
         <div className="mb-4">
           <label
             className="block text-grey-darker text-sm font-bold mb-2"
-            for="password"
+            htmlFor="password"
           >
             Password
           </label>
@@ -80,7 +80,7 @@ function Register() {
         <div className="mb-4">
           <label
             className="block text-grey-darker text-sm font-bold mb-2"
-            for="email"
+            htmlFor="email"
           >
             Email
           </label>
@@ -95,7 +95,7 @@ function Register() {
         <div className="mb-4">
           <label
             className="block text-grey-darker text-sm font-bold mb-2"
-            for="phonenumber"
+            htmlFor="phonenumber"
           >
             Phone number
           </label>
@@ -110,7 +110,7 @@ function Register() {
         <div className="mb-4">
           <label
             className="block text-grey-darker text-sm font-bold mb-2"
-            for="level"
+            htmlFor="level"
           >
             Level
           </label>
@@ -125,7 +125,7 @@ function Register() {
         <div className="mb-4">
           <label
             className="block text-grey-darker text-sm font-bold mb-2"
-            for="salary"
+            htmlFor="salary"
           >
             Salary per hour
           </label>

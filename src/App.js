@@ -1,12 +1,10 @@
 import "./App.css";
-import Login from "./Components/Login/Login";
-import Register from "./Components/Register/Register";
+import ConfigRouter from "./Routers/Router";
 
 function App() {
   return (
     <div>
-      {/* <Login /> */}
-      <Register />
+      <ConfigRouter />
     </div>
   );
 }
