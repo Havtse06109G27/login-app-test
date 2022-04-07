@@ -3,6 +3,7 @@ import AuthContext from "../Context/AuthProvider";
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
+import Check from "../Check_In-Out/Check.jsx";
 
 function Login() {
   const { setAuth } = useContext(AuthContext);
@@ -13,7 +14,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
-
+  const [token, setToken] = useState("");
   useEffect(() => {
     userRef.current.focus();
   }, []);
@@ -34,6 +35,7 @@ function Login() {
       setUsername("");
       setPassword("");
       setSuccess(true);
+      setToken(res.data.accessToken);
     } catch (err) {
       setErrMsg("Login failed");
       errRef.current.focus();
@@ -43,11 +45,7 @@ function Login() {
     <>
       {success ? (
         <div>
-          <h1>You are logged in!</h1>
-          <br />
-          <p>
-            <a href="#">Go to Home</a>
-          </p>
+          <Check token={token} />
         </div>
       ) : (
         <div>
